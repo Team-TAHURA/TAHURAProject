@@ -1,1 +1,175 @@
-<p>landing-page works!</p>
+<div class="container-fluid no-padding">
+    <div class="tahuraLanding">
+        <div class="container">
+            <div class="d-flex justify-content-center" style="padding-top: 5rem;">
+                <div class="card text-center bg-transparent border-0" style="width: 40rem;">
+                    <div class="card-body">
+                        <h1 class="card-title h1">Card title</h1>
+                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                            unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tahuraFloraFauna">
+
+        <!-- FLORA SECTION -->
+
+        <div class="container">
+            <h2 class="text-center section-title">Flora</h2>
+            <div class="row">
+                <a href="#" class="text-end a-tag">Lihat Semua <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="swiper-container container1 mt-5">
+                <div class="swiper-wrapper">
+                    <div *ngFor="let flora of floras" class="swiper-slide col-4">
+                        <div class="card-items">
+                            <img [src]="flora.photos.length > 0 ? getImageUrl(flora.photos[0]?.data) : getErrorImageUrl()"
+                                class="img-fluid" alt="{{ flora.name }} Image"
+                                (error)="handleImageError($event, flora)" />
+                            <div class="intro">
+                                <p class="intro-title">
+                                    {{ flora.name }}
+                                </p>
+                                <p class="intro-des card-clamp">
+                                    {{ flora.description }}
+                                </p>
+                                <a href="#" class="btn btn-readmore intro-btn">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="row justify-content-center mt-5">
+                    <div class="swiper-pagination1"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAUNA SECTION -->
+        <div class="container">
+            <h2 class="text-center section-title">Fauna</h2>
+            <div class="row">
+                <a href="#" class="text-end a-tag">Lihat Semua <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="swiper-container container1 mt-5">
+                <div class="swiper-wrapper">
+                    <div *ngFor="let fauna of faunas" class="swiper-slide col-4">
+                        <div class="card-items">
+                            <img [src]="fauna.photos.length > 0 ? getImageUrl(fauna.photos[0]?.data) : getErrorImageUrl()"
+                                class="img-fluid" alt="{{ fauna.name }} Image"
+                                (error)="handleImageError($event, faunas)" />
+                            <div class="intro">
+                                <p class="intro-title">
+                                    {{ fauna.name }}
+                                </p>
+                                <p class="intro-des card-clamp">
+                                    {{ fauna.description }}
+                                </p>
+                                <a href="#" class="btn btn-readmore intro-btn">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="row justify-content-center mt-5">
+                    <div class="swiper-pagination1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tahuraBerita">
+        <h3 class="text-center pt-5 section-title">Berita</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="sub-title pt-2">Populer</p>
+                        <a href="#" class="a-tag">Lihat Semua <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-6" *ngFor="let berita of beritas.slice(0, 2)">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-xl-4">
+                                        <img [src]="berita.photos.length > 0 ? getImageUrl(berita.photos[0]?.data) : getErrorImageUrl()"
+                                            class="img-fluid" alt="{{ berita.title }} Image"
+                                            (error)="handleImageError($event, beritas)" />
+                                    </div>
+                                    <div class="col-xl-8">
+                                        <div class="card-body berita-card">
+                                            <h5 class="card-title berita-title">{{ berita.title }}</h5>
+                                            <p class="card-text"><small class="text-body-secondary">{{ berita.date
+                                                    }}</small></p>
+                                            <p class="card-text">{{ berita.short_description }}</p>
+                                            <div class="d-flex justify-content-end align-items-end">
+                                                <a [routerLink]="'/beritaDetail-page/' + berita._id"
+                                                    class="btn btn-readmore">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="sub-title pt-2">Terkini</p>
+                        <a href="#" class="a-tag">Lihat Semua <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-6" *ngFor="let berita of beritas.slice(2, 4)">
+                            <div class="card">
+                                <img [src]="berita.photos.length > 0 ? getImageUrl(berita.photos[0]?.data) : getErrorImageUrl()"
+                                    class="img-fluid" alt="{{ berita.title }} Image"
+                                    (error)="handleImageError($event, beritas)" />
+                                <div class="card-body">
+                                    <h5 class="card-title berita-title">{{ berita.title }}</h5>
+                                    <p class="card-text"><small class="text-body-secondary">{{ berita.date }}</small>
+                                    </p>
+                                    <p class="card-text">{{ berita.short_description }}</p>
+                                    <div class="d-flex justify-content-end align-items-end">
+                                        <a [routerLink]="'/beritaDetail-page/' + berita._id" class="btn btn-readmore">Read
+                                            More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tahuraAboutUs">
+        <h4 class="text-center mb-5 section-title">About Us</h4>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type
+                        specimen book. It has survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged. It was popularised in
+                        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="../../assets/Images/logoTahura.png" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

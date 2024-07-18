@@ -1,45 +1,103 @@
-//Tools
+// Tools
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const parser = require('body-parser');
-const multer = require('multer');
 
-//Schemas
-const news = require ('./schemas/news');
-const fauna = require ('./schemas/fauna');
-const flora = require ('./schemas/flora');
+// Schemas
+const berita = require('../backend/schemas/berita');
+const fauna = require('../backend/schemas/fauna');
+const flora = require('../backend/schemas/flora');
 
-//Intializing
+// Initializing 
 const app = express();
-const router = express.Router
 app.use(cors());
-app.use(parser.json())
+app.use(parser.json());
+app.use(express.static('public'))
 
-//Mongocompass
-mongoose.connect('mongodb+srv://mrxstylers:gonzo112233@tahura.ydoqsiv.mongodb.net/')
-.then(() => console.log('TAHURA is Online'))
-.catch(() => console.log('TAHURA is Offline'));
+// MongoDB Connection using Mongoose
+mongoose.connect('mongodb+srv://mrxstylers:gonzo112233@tahura.ydoqsiv.mongodb.net/TAHURA', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error('MongoDB connection error:', err));
 
-//Mongocloud
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://mrxstylers:gonzo112233@tahura.ydoqsiv.mongodb.net/?retryWrites=true&w=majority&appName=TAHURA";
-
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
+// Define routes
+app.get('/api/getFloraDetails/:id', async (req, res) => {
+  try {
+    const floraId = req.params.id;
+    const floraDetails = await flora.findById(floraId).exec();
+    if (!floraDetails) {
+      return res.status(404).json({ error: 'Flora not found' });
+    }
+    res.json(floraDetails);
+  } catch (error) {
+    console.error('Error fetching flora details:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-async function run() {
+app.get('/api/getFaunaDetails/:id', async (req, res) => {
   try {
-    await client.connect();
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    await client.close();
+    const faunaId = req.params.id;
+    const faunaDetails = await fauna.findById(faunaId).exec();
+    if (!faunaDetails) {
+      return res.status(404).json({ error: 'Fauna not found' });
+    }
+    res.json(faunaDetails);
+  } catch (error) {
+    console.error('Error fetching fauna details:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
-}
-run().catch(console.dir);
+});
+
+app.get('/api/getBeritaDetails/:id', async (req, res) => {
+  try {
+    const beritaId = req.params.id;
+    const beritaDetails = await berita.findById(beritaId).exec();
+    if (!beritaDetails) {
+      return res.status(404).json({ error: 'Berita not found' });
+    }
+    res.json(beritaDetails);
+  } catch (error) {
+    console.error('Error fetching berita details:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.get('/api/getAllFlora', async (req, res) => {
+  try {
+    const floraData = await flora.find();
+    res.json(floraData);
+  } catch (error) {
+    console.error('Error fetching flora data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.get('/api/getAllFauna', async (req, res) => {
+  try {
+    const faunaData = await fauna.find();
+    res.json(faunaData);
+  } catch (error) {
+    console.error('Error fetching fauna data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.get('/api/getAllBerita', async (req, res) => {
+  try {
+    const beritaData = await berita.find();
+    res.json(beritaData);
+  } catch (error) {
+    console.error('Error fetching berita data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// Server Check
+const PORT = process.env.PORT || 4242;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

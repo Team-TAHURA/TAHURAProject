@@ -1,1 +1,42 @@
-<p>berita-detail-page works!</p>
+<div #topElement></div>
+<div class="container berita-detail-content">
+    <div class="d-flex justify-content-between">
+        <h2 class="text-center">{{beritaDetails.title}}</h2>
+        <p class="text-end a-tag">Date {{beritaDetails.date}}</p>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <img src="../../assets/Images/berita1.jpg" class="berita-detail-image" alt="#">
+        </div>
+        <div class="col-xl-12 mt-5">
+            <p>
+                {{beritaDetails.description}}
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <p class="text-start sub-title">Artikel Lain</p>
+        <div class="swiper-container container2 mt-5">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide col-3" *ngFor="let berita of beritas">
+                    <div class="card">
+                        <img [src]="berita.photos.length > 0 ? getImageUrl(berita.photos[0]?.data) : getErrorImageUrl()"
+                            class="artikel-lain" alt="{{ berita.title }} Image"
+                            (error)="handleImageError($event, berita)" />
+                        <div class="card-body">
+                            <h5 class="card-title">{{ berita.title }}</h5>
+                            <p class="card-text"><small class="text-body-secondary">{{ berita.date }}</small></p>
+                            <p class="card-text">{{ berita.short_description }}</p>
+                            <div class="d-flex justify-content-end align-items-end">
+                                <a [routerLink]="'/beritaDetail-page/' + berita._id" class="btn btn-readmore">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+</div>

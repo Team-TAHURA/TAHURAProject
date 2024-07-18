@@ -1,1 +1,307 @@
-/* You can add global styles to this file, and also import other style files */
+.swiper-container {
+    overflow: hidden; /* This makes the container clip its content */
+    padding-bottom: 50px; /* Add padding to accommodate the pagination */
+    position: relative; /* To position the pagination correctly */
+}
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000; /* Change button color as needed */
+}
+
+
+.swiper-scrollbar {
+    --swiper-scrollbar-sides-offset: 45%;
+    --swiper-scrollbar-bg-color: lightblue;
+    --swiper-scrollbar-drag-bg-color: #1C4231;
+    --swiper-scrollbar-size: 4px;
+}
+.swiper-pagination1, .swiper-pagination3{
+    --swiper-pagination-color: #1C4231;
+}
+
+.img-slider{
+    width: 40vh;
+    height: 40vh; 
+}
+ 
+.img-slider .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire slide area without distortion */
+}
+
+.detail-container {
+    width: 80%;
+    height: 80vh;
+    margin-bottom: 1vh;
+}
+
+.detail-thumbs {
+    width: 80%;
+    height: 20vh;
+}
+
+.detail-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-slide-thumb-active {
+    border: 2px solid #007bff;
+}
+
+.swiper-button-prev:after, 
+.swiper-button-next:after{
+    font-size: 1px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 5px;
+    border-radius: 15%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 400;
+    color: #1C4231;
+}
+
+.text-justify p{
+    text-align: justify;
+}
+
+.no-padding{
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 24px;
+    font-style: normal;
+}
+
+.section-title{
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 40px;
+    font-style: normal;
+    color: #1C4231;
+}
+
+.sub-title{
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 24px;
+    font-style: normal;
+    color: #1C4231;
+}
+
+
+.a-tag{
+    text-decoration: none;
+    color: #1C4231;
+}
+
+
+/* NAVBAR SECTION */
+
+.navbar{
+    transition: all 0.5s;
+}
+.navbar-scrolled{
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+.navbar-scrolled a, .navbar-scrolled li{
+    color: #1C4231;   
+}
+.navbar li{
+    margin: 0 5vh 0 0;
+}
+@media screen and (max-width: 1000px){
+    .navbar li{
+        margin: 0 0 0 0;
+    }
+}
+.navbar-font a{
+    font-size: 18px;
+    font-weight: 600;
+}
+/* NAVBAR END */
+
+/* CARD HOVER SECTION */
+
+.card-clamp{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: 3;
+}
+
+.card-items {
+    position: relative;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.intro {
+    height: 150px;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(9,9,121,0) 0%, rgba(0,0,0,0.7960434173669468) 100%);
+    color: white;   
+    bottom: 0;
+    transition: .5s;
+}
+
+.intro p{
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.intro-title {
+    padding-left: 10px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.intro-des {
+    padding-left: 10px;
+    font-size: 16px;
+    text-align: justify;
+    padding-right: 10px;
+}
+
+.intro-btn{
+    margin-left: 10px;
+    visibility: hidden;
+    transition: .5s;
+    opacity: 0;
+}
+
+.card-items img{
+    height: 500px;
+    width: 100%;
+}
+
+@media screen and (max-width:1000px) {
+    .card-items img{
+        width: 100%;
+        height: 300px;
+    }
+}
+
+.card-items:hover {
+    cursor: pointer;
+}
+
+.card-items:hover .intro {
+    height: 210px;
+}
+
+@media screen and (max-width: 1200px){
+    .intro{
+        height: 130px;
+    }
+    .card-items:hover .intro {
+        height: 190px;
+    }
+    .intro-title{
+        font-size:24px;
+    }
+    .intro-des{
+        font-size:14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .intro{
+        height: 120px;
+    }
+    .card-items:hover .intro {
+        height: 180px;
+    }
+    .intro-title{
+        font-size:24px;
+    }
+    .intro-des{
+        font-size:12px;
+    }
+}
+
+.card-items:hover .intro-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* CARD HOVER END */
+
+/* BUTTON SECTION */
+
+.btn-readmore{
+    background-color: #FBFDE7;
+    color: #1C4231;
+    text-align: center;
+    width: 150px;
+    height: 40px;
+}
+.btn-readmore:hover{
+    background-color: #1C4231;
+    color:#FBFDE7;
+}
+
+/* BUTTON END */
+
+/* FOOTER SECTION */
+#footer{
+    background-color: #1C4231;
+    height: 300px;
+    color: white;
+}
+@media screen and (max-width: 1200px){
+    #footer{
+        height: 500px;
+    }
+}
+#footer ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#footer li a{
+    text-decoration: none;
+    color: white;
+}
+#footer a{
+    text-decoration: none;
+    color: white;
+    
+}
+.social-ani{
+    transition: 0.5s;
+}
+.social-ani:hover{
+    transform: scale(1.5);
+}
+
+/* FOOTER END */

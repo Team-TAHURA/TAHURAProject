@@ -1,0 +1,75 @@
+/* LANDING PAGE */
+
+.tahuraLanding {
+    margin-top: 10vh;
+    background-image: url('../../assets/Images/tahuraLanding.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 220vh;
+
+}
+
+.tahuraLanding h1 {
+    padding-top: 20vh;
+}
+
+.tahuraFloraFauna {
+    background-image: url('../../assets/Images/tahuraFloraFauna.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 260vh;
+}
+
+.tahuraBerita {
+    background-image: url('../../assets/Images/tahuraBerita2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 200vh;
+}
+
+.tahuraAboutUs {
+    height: 160vh;
+    background-color: #89D0EB;
+    position: relative;
+    /* color: white; */
+}
+
+.tahuraAboutUs p {
+    text-align: justify;
+}
+
+.img-slider {
+    width: 40vh;
+    height: 40vh;
+}
+
+.img-slider .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the entire slide area without distortion */
+}
+
+.tahuraTransition {
+    background-color: #89D0EB;
+    position: relative;
+}
+
+.tahuraFooter {
+    background-image: url('../../assets/Images/tahuraFooter.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
+    position: absolute;
+    /* Positioning absolutely to the parent */
+    bottom: 0;
+    /* Align to the bottom of the parent */
+    width: 100%;
+    /* Ensure it takes full width */
+}
+
+/* LANDING PAGE END */

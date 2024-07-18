@@ -8,16 +8,19 @@ import { FaunaPageComponent } from './fauna-page/fauna-page.component';
 import { BeritaDetailPageComponent } from './berita-detail-page/berita-detail-page.component';
 import { BeritaPageComponent } from './berita-page/berita-page.component';
 import { DetailPageComponent } from './detail-page/detail-page.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 const routes: Routes = [
-  {path: 'landing-page', component: LandingPageComponent}, 
+  {path: '', component: LandingPageComponent}, 
   {path: 'gallery-page', component: GalleryPageComponent}, 
   {path: 'contact-page', component: ContactPageComponent}, 
   {path: 'flora-page', component: FloraPageComponent}, 
   {path: 'fauna-page', component: FaunaPageComponent}, 
   {path: 'berita-page', component: BeritaPageComponent}, 
-  {path: 'beritaDetail-page', component: BeritaDetailPageComponent}, 
-  {path: 'detail-page', component: DetailPageComponent}
+  {path: 'beritaDetail-page', component: BeritaDetailPageComponent},
+  {path: 'beritaDetail-page/:id', component: BeritaDetailPageComponent},
+  {path: 'detail-page', component: DetailPageComponent},
+  {path: '**', component: NotFoundPageComponent }
 ];
 
 @NgModule({
