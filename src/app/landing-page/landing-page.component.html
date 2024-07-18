@@ -30,10 +30,12 @@
                                 class="img-fluid" alt="{{ flora.name }} Image"
                                 (error)="handleImageError($event, flora)" />
                             <div class="intro">
-                                <p class="intro-title">
-                                    {{ flora.name }}
-                                </p>
-                                <p class="intro-des card-clamp">
+                                <div class="intro-title-panel d-flex align-items-end">
+                                    <p class="intro-title title-clamp">
+                                        {{ flora.name }}
+                                    </p>
+                                </div>
+                                <p class="intro-des card-clamp text-justify">
                                     {{ flora.short_description }}
                                 </p>
                                 <a href="#" class="btn btn-readmore intro-btn">
@@ -64,10 +66,12 @@
                                 class="img-fluid" alt="{{ fauna.name }} Image"
                                 (error)="handleImageError($event, faunas)" />
                             <div class="intro">
-                                <p class="intro-title">
-                                    {{ fauna.name }}
-                                </p>
-                                <p class="intro-des card-clamp">
+                                <div class="intro-title-panel d-flex align-items-end">
+                                    <p class="intro-title title-clamp">
+                                        {{ fauna.name }}
+                                    </p>
+                                </div>
+                                <p class="intro-des card-clamp text-justify">
                                     {{ fauna.short_description }}
                                 </p>
                                 <a href="#" class="btn btn-readmore intro-btn">
@@ -138,7 +142,8 @@
                                     </p>
                                     <p class="card-text">{{ berita.short_description }}</p>
                                     <div class="d-flex justify-content-end align-items-end">
-                                        <a [routerLink]="'/beritaDetail-page/' + berita._id" class="btn btn-readmore">Read
+                                        <a [routerLink]="'/beritaDetail-page/' + berita._id"
+                                            class="btn btn-readmore">Read
                                             More</a>
                                     </div>
                                 </div>

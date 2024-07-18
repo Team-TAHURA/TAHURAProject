@@ -15,11 +15,13 @@
                                         class="img-fluid" alt="{{ flora.name }} Image"
                                         (error)="handleImageError($event, flora)" />
                                     <div class="intro">
-                                        <p class="intro-title">
-                                            {{ flora.name }}
-                                        </p>
-                                        <p class="intro-des card-clamp">
-                                            {{ flora.description }}
+                                        <div class="intro-title-panel d-flex align-items-end">
+                                            <p class="intro-title title-clamp">
+                                                {{ flora.name }}
+                                            </p>
+                                        </div>
+                                        <p class="intro-des card-clamp text-justify">
+                                            {{ flora.short_description }}
                                         </p>
                                         <a href="#" class="btn btn-readmore intro-btn">
                                             Read More
@@ -48,11 +50,13 @@
                                         class="img-fluid" alt="{{ fauna.name }} Image"
                                         (error)="handleImageError($event, faunas)" />
                                     <div class="intro">
-                                        <p class="intro-title">
-                                            {{ fauna.name }}
-                                        </p>
-                                        <p class="intro-des card-clamp">
-                                            {{ fauna.description }}
+                                        <div class="intro-title-panel d-flex align-items-end">
+                                            <p class="intro-title title-clamp">
+                                                {{ fauna.name }}
+                                            </p>
+                                        </div>
+                                        <p class="intro-des card-clamp text-justify">
+                                            {{ fauna.short_description }}
                                         </p>
                                         <a href="#" class="btn btn-readmore intro-btn">
                                             Read More
