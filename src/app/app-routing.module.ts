@@ -20,6 +20,7 @@ const routes: Routes = [
   {path: 'beritaDetail-page', component: BeritaDetailPageComponent},
   {path: 'beritaDetail-page/:id', component: BeritaDetailPageComponent},
   {path: 'detail-page', component: DetailPageComponent},
+  {path: 'detail-page/:id', component: DetailPageComponent},
   {path: '**', component: NotFoundPageComponent }
 ];
 
