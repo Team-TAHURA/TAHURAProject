@@ -2,17 +2,19 @@
 <div class="container berita-detail-content">
     <div class="d-flex justify-content-between">
         <h2 class="text-center">{{beritaDetails.title}}</h2>
-        <p class="text-end a-tag">Date {{beritaDetails.date}}</p>
+        <p class="text-end a-tag">  {{beritaDetails.date}}</p>
     </div>
     <div class="row">
         <div class="col-xl-12">
-            <img src="../../assets/Images/berita1.jpg" class="berita-detail-image" alt="#">
+            <img [src]="beritaDetails.photos.length > 0 ? getImageUrl(beritaDetails.photos[0]?.data) : getErrorImageUrl()"
+            class="artikel-lain" alt="{{ beritaDetails.title }} Image"
+            (error)="handleImageError($event, beritaDetails)" />
         </div>
         <div class="col-xl-12 mt-5">
-            <p>
-                {{beritaDetails.description}}
+            <p *ngFor="let desc of beritaDetails.description">
+                {{ desc }}
             </p>
-        </div>
+        </div>        
     </div>
 
     <div class="row mt-5">
