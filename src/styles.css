@@ -326,4 +326,20 @@ body{
     transform: scale(1.5);
 }
 
+.tahuraTransition{
+    background-color: #89D0EB;
+    position: relative;
+}
+
+.tahuraFooter{
+    background-image: url('../src/assets/Images/tahuraFooter.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
+    position: absolute; /* Positioning absolutely to the parent */
+    bottom: 0; /* Align to the bottom of the parent */
+    width: 100%; /* Ensure it takes full width */
+}
+
 /* FOOTER END */
