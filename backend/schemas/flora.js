@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const floraSchema = mongoose.Schema({
     name: { type: String },
+    nameIlmiah: {type: String},
     descriptions: { type: String },
     short_description: { type: String },
     category: { type: String },
