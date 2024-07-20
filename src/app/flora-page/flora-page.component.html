@@ -8,9 +8,10 @@
                     class="img-fluid" alt=" {{ flora.name }} Image" 
                     (error)="handleImageError($event, floras)">
                     <div class="intro">
-                        <div class="intro-title-panel d-flex align-items-end">
-                            <p class="intro-title title-clamp">{{ flora.name }}</p>
+                        <div class="intro-title-panel flex row align-items-end">
+                            <small class="intro-title title-clamp">{{ flora.name }}</small>
                         </div>
+                        <small class="sub-intro-title title-clamp">{{ flora.nameIlmiah }}</small>
                         <p class="intro-des card-clamp text-justify">
                             {{ flora.short_description }}
                         </p>

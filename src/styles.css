@@ -150,8 +150,8 @@ body{
 
 .title-clamp{
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -163,6 +163,15 @@ body{
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.des-clamp{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 
 .card-items {
     position: relative;
@@ -176,7 +185,8 @@ body{
     padding: 5px;
     box-sizing: border-box;
     position: absolute;
-    background: linear-gradient(180deg, rgba(9,9,121,0) 0%, rgba(0,0,0,0.7960434173669468) 100%);
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.8240546218487395) 0%, rgba(0,0,0,0.7456232492997199) 80%, rgba(0,0,0,0.644782913165266) 87%, rgba(0,0,0,0.4767156862745098) 94%, rgba(255,255,255,0) 100%);
     color: white;   
     bottom: 0;
     transition: .5s;
@@ -189,15 +199,20 @@ body{
 }
 
 .intro-title-panel{
-    /* background-color: red; */
-    height: 90px;
+    height: 80px;
+    margin-top: 10px;
+    padding-left: 10px;
 }
 
 .intro-title {
-    padding-left: 10px;
     font-size: 28px;
     font-weight: 600;
     /* background-color: red; */
+}
+
+.sub-intro-title{
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .intro-des {
@@ -235,18 +250,28 @@ body{
 }
 
 @media screen and (max-width: 1200px){
+    .intro{
+        background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,0.8240546218487395) 0%, rgba(0,0,0,0.7456232492997199) 50%, rgba(0,0,0,0.6223739495798319) 87%, rgba(0,0,0,0.4290966386554622) 94%, rgba(255,255,255,0) 100%);
+    }
     .card-clamp{
         -webkit-line-clamp: 2;
         line-clamp: 2;
     }
+    .intro-title-panel{
+        height: 70px;
+    }
     .intro{
-        height: 150px;
+        height: 140px;
     }
     .card-items:hover .intro {
-        height: 210px;
+        height: 195px;
     }
     .intro-title{
         font-size:22px;
+    }
+    .sub-intro-title{
+        font-size: 18px;
     }
     .intro-des{
         font-size:14px;
@@ -254,18 +279,28 @@ body{
 }
 
 @media screen and (max-width: 768px) {
+    .intro{
+        background: rgb(0,0,0);
+        background: linear-gradient(0deg, rgba(0,0,0,0.8240546218487395) 0%, rgba(0,0,0,0.5131302521008403) 86%, rgba(255,255,255,0) 100%);
+    }
+    .intro-title-panel{
+        height: 60px;
+    }
     .card-clamp{
         -webkit-line-clamp: 2;
         line-clamp: 2;
     }
     .intro{
-        height: 140px;
+        height: 120px;
     }
     .card-items:hover .intro {
-        height: 200px;
+        height: 180px;
     }
     .intro-title{
         font-size:20px;
+    }
+    .sub-intro-title{
+        font-size: 16px;
     }
     .intro-des{
         font-size:12px;

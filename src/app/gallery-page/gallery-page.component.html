@@ -16,9 +16,12 @@
                                         (error)="handleImageError($event, flora)" />
                                     <div class="intro">
                                         <div class="intro-title-panel d-flex align-items-end">
-                                            <p class="intro-title title-clamp">
+                                            <small class="intro-title title-clamp">
                                                 {{ flora.name }}
-                                            </p>
+                                            </small>
+                                            <small class="sub-intro-title title-clamp">
+                                                {{ flora.nameIlmiah }}
+                                            </small>
                                         </div>
                                         <p class="intro-des card-clamp text-justify">
                                             {{ flora.short_description }}
@@ -51,9 +54,12 @@
                                         (error)="handleImageError($event, faunas)" />
                                     <div class="intro">
                                         <div class="intro-title-panel d-flex align-items-end">
-                                            <p class="intro-title title-clamp">
+                                            <small class="intro-title title-clamp">
                                                 {{ fauna.name }}
-                                            </p>
+                                            </small>
+                                            <small class="sub-intro-title title-clamp">
+                                                {{ fauna.nameIlmiah }}
+                                            </small>
                                         </div>
                                         <p class="intro-des card-clamp text-justify">
                                             {{ fauna.short_description }}

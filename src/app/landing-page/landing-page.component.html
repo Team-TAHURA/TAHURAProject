@@ -30,15 +30,18 @@
                                 class="img-fluid" alt="{{ flora.name }} Image"
                                 (error)="handleImageError($event, flora)" />
                             <div class="intro">
-                                <div class="intro-title-panel d-flex align-items-end">
-                                    <p class="intro-title title-clamp">
+                                <div class="intro-title-panel">
+                                    <small class="intro-title title-clamp">
                                         {{ flora.name }}
-                                    </p>
+                                    </small>
+                                    <small class="sub-intro-title title-clamp">
+                                        {{ flora.nameIlmiah }}
+                                    </small>
                                 </div>
                                 <p class="intro-des card-clamp text-justify">
                                     {{ flora.short_description }}
                                 </p>
-                                <a href="#" class="btn btn-readmore intro-btn">
+                                <a a [routerLink]="'/detail-page/' + flora._id" class="btn btn-readmore intro-btn">
                                     Read More
                                 </a>
                             </div>
@@ -66,10 +69,13 @@
                                 class="img-fluid" alt="{{ fauna.name }} Image"
                                 (error)="handleImageError($event, faunas)" />
                             <div class="intro">
-                                <div class="intro-title-panel d-flex align-items-end">
-                                    <p class="intro-title title-clamp">
+                                <div class="intro-title-panel">
+                                    <small class="intro-title title-clamp">
                                         {{ fauna.name }}
-                                    </p>
+                                    </small>
+                                    <small class="sub-intro-title title-clamp">
+                                        {{ fauna.nameIlmiah }}
+                                    </small>
                                 </div>
                                 <p class="intro-des card-clamp text-justify">
                                     {{ fauna.short_description }}
@@ -108,7 +114,7 @@
                                             (error)="handleImageError($event, beritas)" />
                                     </div>
                                     <div class="col-xl-8">
-                                        <div class="card-body berita-card">
+                                        <div class="card-body berita-card text-justify">
                                             <h5 class="card-title berita-title">{{ berita.title }}</h5>
                                             <p class="card-text"><small class="text-body-secondary">{{ berita.date
                                                     }}</small></p>
