@@ -18,9 +18,9 @@ const routes: Routes = [
   {path: 'fauna-page', component: FaunaPageComponent}, 
   {path: 'berita-page', component: BeritaPageComponent}, 
   {path: 'beritaDetail-page', component: BeritaDetailPageComponent},
-  {path: 'beritaDetail-page/:id', component: BeritaDetailPageComponent},
+  {path: 'beritaDetail-page/:no', component: BeritaDetailPageComponent},
   {path: 'detail-page', component: DetailPageComponent},
-  {path: 'detail-page/:id', component: DetailPageComponent},
+  {path: 'detail-page/:no', component: DetailPageComponent},
   {path: '**', component: NotFoundPageComponent }
 ];
 

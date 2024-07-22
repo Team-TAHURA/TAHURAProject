@@ -1,1 +1,24 @@
-<p>fauna-page works!</p>
+<div class="fauna">
+    <h1>FAUNA</h1>
+    <div class="container">
+        <div class="row mb-5">
+            <div *ngFor="let fauna of faunas" class="col-md-4 col-6 mt-4">
+                <div class="card-items">
+                    <img [src]="fauna.photos.length > 0 ? getImageUrl(fauna.photos[0]?.data) : getErrorImageUrl()" 
+                    class="img-fluid" alt=" {{ fauna.name }} Image" 
+                    (error)="handleImageError($event, faunas)">
+                    <div class="intro">
+                        <div class="intro-title-panel flex row align-items-end">
+                            <small class="intro-title title-clamp">{{ fauna.name }}</small>
+                            <small class="sub-intro-title title-clamp">({{ fauna.nameIlmiah }})</small>
+                        </div>
+                        <p class="intro-des card-clamp text-justify">
+                            {{ fauna.short_description }}
+                        </p>
+                        <a [routerLink]="'/detail-page/' + fauna.name" class="btn btn-readmore intro-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

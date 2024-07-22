@@ -46,7 +46,7 @@ export class FloraPageComponent {
   }
 
   handleImageError(event: any, product: any) {
-    console.error('Image loading error for product:', product, event);
+    console.error('Image loading error', product, event);
     product.errorImage = true;
   }
 }
