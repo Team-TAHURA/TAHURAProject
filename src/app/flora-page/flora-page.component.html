@@ -15,7 +15,7 @@
                         <p class="intro-des card-clamp text-justify">
                             {{ flora.short_description }}
                         </p>
-                        <a [routerLink]="'/detail-page/' + flora.name" class="btn btn-readmore intro-btn">Read More</a>
+                        <a [routerLink]="['/detail-page', flora._id]" class="btn btn-readmore intro-btn">Read More</a>
                     </div>
                 </div>
             </div>
