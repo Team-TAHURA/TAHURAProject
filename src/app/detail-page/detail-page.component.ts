@@ -1,4 +1,5 @@
-import { Component, AfterViewInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FloraService } from '../services/flora.service';
 import { FaunaService } from '../services/fauna.service';
 declare var Swiper: any;
@@ -9,19 +10,28 @@ declare var Swiper: any;
   styleUrls: ['./detail-page.component.css']
 })
 export class DetailPageComponent {
-  public floras: any[] = [];
-  public faunas: any[] = [];
+  public flora: any;
+  public fauna: any;
+  public id: any;
+  public type: any;
 
   constructor(
-    private flora: FloraService,
-    private fauna: FaunaService,
+    private route: ActivatedRoute,
+    private floraService: FloraService,
+    private faunaService: FaunaService,
     private ngZone: NgZone
   ) { }
 
   ngOnInit(): void {
     this.ngZone.runOutsideAngular(() => {
-      this.getAllFlora();
-      this.getAllFauna();
+      this.id = this.route.snapshot.paramMap.get('id');
+      this.type = this.route.snapshot.paramMap.get('type');
+
+      if (this.type === 'flora') {
+        this.getFloraDetails();
+      } else if (this.type === 'fauna') {
+        this.getFaunaDetails();
+      }
     });
   }
 
@@ -156,28 +166,28 @@ export class DetailPageComponent {
     });
   }
 
-  getAllFlora() {
-    this.flora.getAllFlora().subscribe(
-      (floras: any[]) => {
+  getFloraDetails() {
+    this.floraService.getFloraDetails(this.id).subscribe(
+      (flora: any) => {
         this.ngZone.run(() => {
-          this.floras = floras;
+          this.flora = flora;
         });
       },
       error => {
-        console.error('Error fetching Floras:', error);
+        console.error('Error fetching flora details:', error);
       }
     );
   }
 
-  getAllFauna() {
-    this.fauna.getAllFauna().subscribe(
-      (faunas: any[]) => {
+  getFaunaDetails() {
+    this.faunaService.getFaunaDetails(this.id).subscribe(
+      (fauna: any) => {
         this.ngZone.run(() => {
-          this.faunas = faunas;
+          this.fauna = fauna;
         });
       },
       error => {
-        console.error('Error fetching Faunas:', error);
+        console.error('Error fetching fauna details:', error);
       }
     );
   }

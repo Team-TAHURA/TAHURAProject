@@ -4,9 +4,8 @@
         <div class="row mb-5">
             <div *ngFor="let flora of floras" class="col-md-4 col-6 mt-4">
                 <div class="card-items">
-                    <img [src]="flora.photos.length > 0 ? getImageUrl(flora.photos[0]?.data) : getErrorImageUrl()" 
-                    class="img-fluid" alt=" {{ flora.name }} Image" 
-                    (error)="handleImageError($event, floras)">
+                    <img [src]="flora.photos.length > 0 ? getImageUrl(flora.photos[0]?.data) : getErrorImageUrl()"
+                        class="img-fluid" alt="{{ flora.name }} Image" (error)="handleImageError($event, flora)">
                     <div class="intro">
                         <div class="intro-title-panel flex row align-items-end">
                             <small class="intro-title title-clamp">{{ flora.name }}</small>
@@ -15,7 +14,7 @@
                         <p class="intro-des card-clamp text-justify">
                             {{ flora.short_description }}
                         </p>
-                        <a [routerLink]="['/detail-page', flora._id]" class="btn btn-readmore intro-btn">Read More</a>
+                        <a [routerLink]="['/detail-page', 'flora', flora._id]" class="btn btn-readmore intro-btn">Read More</a>
                     </div>
                 </div>
             </div>

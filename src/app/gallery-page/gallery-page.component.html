@@ -15,12 +15,12 @@
                                         class="img-fluid" alt="{{ flora.name }} Image"
                                         (error)="handleImageError($event, flora)" />
                                     <div class="intro">
-                                        <div class="intro-title-panel d-flex align-items-end">
+                                        <div class="intro-title-panel">
                                             <small class="intro-title title-clamp">
                                                 {{ flora.name }}
                                             </small>
                                             <small class="sub-intro-title title-clamp">
-                                                {{ flora.nameIlmiah }}
+                                                ({{ flora.nameIlmiah }})
                                             </small>
                                         </div>
                                         <p class="intro-des card-clamp text-justify">
@@ -53,12 +53,12 @@
                                         class="img-fluid" alt="{{ fauna.name }} Image"
                                         (error)="handleImageError($event, faunas)" />
                                     <div class="intro">
-                                        <div class="intro-title-panel d-flex align-items-end">
+                                        <div class="intro-title-panel">
                                             <small class="intro-title title-clamp">
                                                 {{ fauna.name }}
                                             </small>
                                             <small class="sub-intro-title title-clamp">
-                                                {{ fauna.nameIlmiah }}
+                                                ({{ fauna.nameIlmiah }})
                                             </small>
                                         </div>
                                         <p class="intro-des card-clamp text-justify">
