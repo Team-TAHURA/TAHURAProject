@@ -14,7 +14,7 @@
                                     class="img-fluid" alt="{{ berita.title }} Image"
                                     (error)="handleImageError($event, berita)" />
                             </div>
-                            <div class="col-xl-8">
+                            <div class="col-xl-8 text-justify">
                                 <div class="card-body berita-card text-justify">
                                     <h5 class="card-title berita-title">{{ berita.title }}</h5>
                                     <p class="card-text"><small class="text-body-secondary">{{ berita.date }}</small>
@@ -42,7 +42,7 @@
                         <img [src]="berita.photos.length > 0 ? getImageUrl(berita.photos[0]?.data) : getErrorImageUrl()"
                             class="img-fluid" alt="{{ berita.title }} Image"
                             (error)="handleImageError($event, berita)" />
-                        <div class="card-body">
+                        <div class="card-body text-justify">
                             <h5 class="card-title berita-title">{{ berita.title }}</h5>
                             <p class="card-text"><small class="text-body-secondary">{{ berita.date }}</small></p>
                             <p class="card-text">{{ berita.short_description }}</p>
@@ -84,7 +84,7 @@
     </div>
 
     <!-- Additional content (Artikel Lain) -->
-    <div class="row mt-5">
+    <div class="row mt-5 text-justify">
         <p class="text-start sub-title">Artikel Lain</p>
         <div class="swiper-container container2 mt-5">
             <div class="swiper-wrapper">
