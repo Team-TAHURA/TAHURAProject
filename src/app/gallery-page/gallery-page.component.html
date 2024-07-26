@@ -82,8 +82,8 @@
                     <p>Terkini</p>
                     <a href="#" class="text-end a-tag">Lihat Semua <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="row">
-                    <div class="col-xl-12 col-6" *ngFor="let berita of beritas.slice(0, 2)">
+                <div class="row" style="padding-bottom: 50vh;">
+                    <div class="col-xl-12 col-6 mb-3" *ngFor="let berita of beritas.slice(0, 2)">
                         <div class="card">
                             <img [src]="berita.photos.length > 0 ? getImageUrl(berita.photos[0]?.data) : getErrorImageUrl()"
                                 class="img-fluid" alt="{{ berita.title }} Image"
@@ -104,7 +104,3 @@
         </div>
     </div>
 </div>
-<div class="tahuraTransition2">
-    <div class="tahuraFooter">
-    </div>
-  </div>

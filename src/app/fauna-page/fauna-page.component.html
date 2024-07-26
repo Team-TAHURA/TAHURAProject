@@ -6,9 +6,9 @@
   
   <div *ngIf="!loading">
     <div class="fauna">
-      <h1>FAUNA</h1>
-      <div class="container">
-        <div class="row mb-5">
+      <div class="container fauna-content">
+        <h1>FAUNA</h1>
+        <div class="row" style="padding-bottom: 50vh;">
           <div *ngFor="let fauna of faunas" class="col-md-4 col-6 mt-4">
             <div class="card-items">
               <img [src]="fauna.photos.length > 0 ? getImageUrl(fauna.photos[0]?.data) : getErrorImageUrl()" 
@@ -29,9 +29,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="tahuraTransition2">
-      <div class="tahuraFooter"></div>
     </div>
   </div>
   

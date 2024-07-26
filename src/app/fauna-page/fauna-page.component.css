@@ -7,6 +7,10 @@
     background-position: center; /* Center the background */ 
 }
 
+.fauna-content{
+    height: auto;
+}
+
 h1 {
     padding-top: 20vh;
     text-align: center;

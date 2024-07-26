@@ -1,10 +1,13 @@
 .flora{
-    background-color: white;
     background-image: url('../../assets/Images/line-background.png');
     background-repeat: no-repeat;
     background-size: cover; /* Cover the entire viewport */
     background-attachment: fixed; /* Fixed background */
     background-position: center; /* Center the background */ 
+}
+
+.flora-content{
+    height: auto;
 }
 
 h1 {

@@ -1,32 +1,23 @@
-body {
-    background-color: white;
+.contact-page-background {
     background-image: url('../../assets/Images/forest-background2-03.png');
     background-repeat: no-repeat;
     background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the background */ 
-    height: 180vh;
+   
+}
+.contact-page{
+    padding-top: 15vh;
+}
+.contact-page-content{
+    height: auto;
 }
 
 .contact {
-    margin: 20vh;
     background-color: transparent; /* Make the container background transparent */
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better readability */
     backdrop-filter: blur(10px); /* Optional: Add a blur effect to the background */
-}
-
-
-/* Contact layout */
-.contact {
-    margin: 100px; /* Adjust this value to provide space for the fixed navbar */
-    position: relative; /* Make the container a positioning context */
-}
-
-.contact img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    margin-bottom: 50vh;
 }
 
 .contact h2 {
@@ -38,4 +29,21 @@ body {
     font-size: 16px;
     color: #555;
     line-height: 1.5;
+}
+
+.map-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.map-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
