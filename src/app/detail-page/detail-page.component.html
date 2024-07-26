@@ -1,38 +1,86 @@
-
-<div class="tahuraBackground" style="padding-bottom: 30vh; padding-top: 2vh;">
-  <div class="detail" *ngIf="flora || fauna">
-    <div class="container">
-      <div class="row pt-3">
-        <div class="col-md-6 bg-danger" *ngIf="flora || fauna">
-          <div class="swiper-container detail-container detailSwiper">
-            <div class="swiper-wrapper">
-              <div *ngFor="let photo of (flora?.photos || fauna?.photos)" class="swiper-slide detail-slide">
-                <img [src]="getImageUrl(photo.data)" alt="Detail Image">
+<div class="row tahuraBackground" style="padding-bottom: 30vh; padding-top: 2vh;">
+  <div class="detail">
+    <div class="container row pt-3">
+    <div class="col-md-6 bg-danger">
+      <div class="swiper-container container3 mt-1 ">
+        <div class="swiper-wrapper">
+          <div *ngFor="let photo of (flora?.photos || fauna?.photos)" class="swiper-slide col-4">
+            <div class="card-items">
+              <img [src]="getImageUrl(photo.data)" class="img-fluid" alt="Detail Image"
+                (error)="handleImageError($event, photo)" />
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-6" *ngFor="let photo of (flora?.photos || fauna?.photos)">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-xl-12">
+                <img [src]="getImageUrl(photo.data)" class="img-fluid" alt="Detail Thumbnail" />
               </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
           </div>
-          <div class="row">
-            <div class="col-xl-4 col-6" *ngFor="let photo of (flora?.photos || fauna?.photos)">
-              <div class="card mb-3">
-                <div class="row g-0">
-                  <div class="col-xl-12">
-                    <img [src]="getImageUrl(photo.data)" class="img-fluid" alt="Detail Thumbnail" />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 text-container text-justify">
+      <h2 class="pt-5">{{ flora?.name || fauna?.name }} <span style="font-style: italic;">({{ flora?.nameIlmiah ||
+          fauna?.nameIlmiah }})</span></h2>
+      <p>{{ flora?.description || fauna?.description }}</p>
+    </div>
+    <div class="row text-center">
+      <a [routerLink]="['/']" class="button mb-3">BACK</a>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  <div class="tahuraBackground" style="padding-bottom: 30vh; padding-top: 2vh;">
+    <div class="detail" *ngIf="flora || fauna">
+      <div class="container">
+        <div class="row pt-3">
+          <div class="col-md-6 bg-danger" *ngIf="flora || fauna">
+            <div class="swiper-container detail-container detailSwiper">
+              <div class="swiper-wrapper">
+                <div *ngFor="let photo of (flora?.photos || fauna?.photos)" class="swiper-slide detail-slide">
+                  <img [src]="getImageUrl(photo.data)" alt="Detail Image">
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+            <div class="row">
+              <div class="col-xl-4 col-6" *ngFor="let photo of (flora?.photos || fauna?.photos)">
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-xl-12">
+                      <img [src]="getImageUrl(photo.data)" class="img-fluid" alt="Detail Thumbnail" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="col-md-6 text-container text-justify">
+            <h2 class="pt-5">{{ flora?.name || fauna?.name }} <span style="font-style: italic;">({{ flora?.nameIlmiah ||
+                fauna?.nameIlmiah }})</span></h2>
+            <p>{{ flora?.description || fauna?.description }}</p>
+          </div>
         </div>
-        <div class="col-md-6 text-container text-justify">
-          <h2 class="pt-5">{{ flora?.name || fauna?.name }} <span style="font-style: italic;">({{ flora?.nameIlmiah || fauna?.nameIlmiah }})</span></h2>
-          <p>{{ flora?.description || fauna?.description }}</p>
+        <div class="row text-center">
+          <a [routerLink]="['/']" class="button mb-3">BACK</a>
         </div>
-      </div>
-      <div class="row text-center">
-        <a [routerLink]="['/']" class="button mb-3">BACK</a>
       </div>
     </div>
   </div>
-</div>

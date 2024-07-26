@@ -39,7 +39,7 @@ export class DetailPageComponent {
     this.ngZone.runOutsideAngular(() => {
       // Initialize swiper1
       const swiper1 = new Swiper('.container1', {
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
         grabCursor: true,
@@ -54,23 +54,23 @@ export class DetailPageComponent {
         },
         breakpoints: {
           0: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 10,
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 10,
           },
           968: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 10,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
           1330: {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 30,
           }
         }
@@ -85,23 +85,23 @@ export class DetailPageComponent {
         },
         breakpoints: {
           0: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 10,
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 10,
           },
           968: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 10,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
           1330: {
-            slidesPerView: 4,
+            slidesPerView: 1,
             spaceBetween: 20,
           }
         }
@@ -109,7 +109,7 @@ export class DetailPageComponent {
 
       // Initialize swiper3
       const swiper3 = new Swiper('.container3', {
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
         grabCursor: true,
@@ -120,19 +120,19 @@ export class DetailPageComponent {
         },
         breakpoints: {
           0: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 10,
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 10,
           },
           1024: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
           1330: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 30,
           }
         }
@@ -147,7 +147,7 @@ export class DetailPageComponent {
       // Initialize swiperThumbs
       const swiperThumbs = new Swiper(".mySwiperThumbs", {
         spaceBetween: 10,
-        slidesPerView: 4,
+        slidesPerView: 1,
         freeMode: true,
         watchSlidesProgress: true,
       });
