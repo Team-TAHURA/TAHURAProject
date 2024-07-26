@@ -13,6 +13,7 @@ export class GalleryPageComponent {
   public floras: any[] = [];
   public faunas: any[] = [];
   public beritas: any[] = [];
+  public loading: boolean = true;
 
   constructor(
     private flora: FloraService,
@@ -32,6 +33,7 @@ export class GalleryPageComponent {
   ngAfterViewInit(): void {
     this.ngZone.runOutsideAngular(() => {
       // Initialize swiper1
+      this.loading = false;
       const swiper1 = new Swiper('.container1', {
         slidesPerView: 3,
         spaceBetween: 30,

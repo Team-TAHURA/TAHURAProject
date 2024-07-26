@@ -331,16 +331,40 @@ background: linear-gradient(0deg, rgba(0,0,0,0.8240546218487395) 0%, rgba(0,0,0,
 /* BUTTON END */
 
 /* FOOTER SECTION */
+
+.tahuraTransition{
+    background-color: #89D0EB;
+    position: relative;
+    height: 40vh;
+    /* margin-top: 40vh; */
+}
+.tahuraTransition2{
+    background-color: white;
+    position: relative;
+    height: 40vh;
+}
+
+.tahuraFooter{
+    background-image: url('assets/Images/tahuraFooter.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
+    position: absolute; /* Positioning absolutely to the parent */
+    bottom: 0; /* Align to the bottom of the parent */
+    width: 100%; /* Ensure it takes full width */
+}
+
 #footer{
     background-color: #1C4231;
-    height: 300px;
+    /* height: 300px; */
     color: white;
 }
-@media screen and (max-width: 1200px){
+/* @media screen and (max-width: 1200px){
     #footer{
         height: 500px;
     }
-}
+} */
 #footer ul{
     list-style-type: none;
     margin: 0;
@@ -362,20 +386,30 @@ background: linear-gradient(0deg, rgba(0,0,0,0.8240546218487395) 0%, rgba(0,0,0,
     transform: scale(1.5);
 }
 
-.tahuraTransition{
-    background-color: #89D0EB;
-    position: relative;
-}
-
-.tahuraFooter{
-    background-image: url('../src/assets/Images/tahuraFooter.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 40vh;
-    position: absolute; /* Positioning absolutely to the parent */
-    bottom: 0; /* Align to the bottom of the parent */
-    width: 100%; /* Ensure it takes full width */
-}
-
 /* FOOTER END */
+
+/* LOAD START */
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+  }
+  
+  @keyframes spinner-border {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+/* LOAD END */

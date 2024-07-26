@@ -12,6 +12,7 @@ export class BeritaDetailPageComponent {
   public beritas: any[] = [];
   beritaId: string | null = null;
   beritaDetails: any;
+  public loading: boolean = true;
   @ViewChild('topElement') topElement!: ElementRef;
 
   constructor(
@@ -31,15 +32,18 @@ export class BeritaDetailPageComponent {
           (details: any) => {
             this.ngZone.run(() => {
               this.beritaDetails = details;
+              this.loading = false;
               console.log('Berita details:', this.beritaDetails);
             });
           },
           error => {
             console.error('Error getting berita details:', error);
+            this.loading = false;
           }
         );
       } else {
         console.error('Berita ID is null.');
+        this.loading = false;
       }
       this.renderer.setProperty(document.documentElement, 'scrollTop', 0);
       this.renderer.setProperty(document.body, 'scrollTop', 0);
@@ -53,6 +57,7 @@ export class BeritaDetailPageComponent {
   ngAfterViewInit(): void {
     this.ngZone.runOutsideAngular(() => {
       // Initialize swiper1
+      this.loading = false;
       const swiper1 = new Swiper('.container1', {
         slidesPerView: 3,
         spaceBetween: 30,
@@ -186,10 +191,12 @@ export class BeritaDetailPageComponent {
       (beritas: any[]) => {
         this.ngZone.run(() => {
           this.beritas = beritas;
+          this.loading = false;
         });
       },
       error => {
         console.error('Error fetching Beritas:', error);
+        this.loading = false; 
       }
     );
   }

@@ -8,6 +8,7 @@ import { FloraService } from '../services/flora.service';
 })
 export class FloraPageComponent {
   public floras: any[] = [];
+  public loading: boolean = true;
 
   constructor(
     private flora: FloraService,
@@ -24,10 +25,12 @@ export class FloraPageComponent {
       (floras: any[]) => {
         this.ngZone.run(() => {
           this.floras = floras;
+          this.loading = false;
         });
       },
       error => {
         console.error('Error fetching Floras:', error);
+        this.loading = false;
       }
     );
   }

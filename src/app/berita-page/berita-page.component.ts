@@ -13,6 +13,7 @@ export class BeritaPageComponent {
   public beritasTerkini: any[] = [];
   currentPage = 1;
   itemsPerPage = 2; // Adjusted to 2 for each section
+  public loading: boolean = true;
 
   constructor(
     private beritaService: BeritaService,
@@ -161,11 +162,13 @@ export class BeritaPageComponent {
       (beritas: any[]) => {
         this.ngZone.run(() => {
           this.beritas = beritas;
+          this.loading = false;
           this.populateBeritas();
         });
       },
       error => {
         console.error('Error fetching Beritas:', error);
+        this.loading = false;
       }
     );
   }
