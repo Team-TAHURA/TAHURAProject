@@ -16,12 +16,13 @@ app.use(parser.json());
 app.use(express.static('public'))
 
 // MongoDB Connection using Mongoose
-mongoose.connect('mongodb+srv://mrxstylers:gonzo112233@tahura.ydoqsiv.mongodb.net/TAHURA', {
+mongoose.connect('mongodb+srv://TAHURA:TAHURA123@tahura.cjtoycf.mongodb.net/TAHURA', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-.then(() => console.log('MongoDB connected'))
+.then(() => console.log('MongoDB connected to database: TAHURA'))
 .catch(err => console.error('MongoDB connection error:', err));
+
 
 // Define routes
 app.get('/api/getFloraDetails/:id', async (req, res) => {

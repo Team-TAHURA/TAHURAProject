@@ -8,6 +8,7 @@ import { FloraService } from '../services/flora.service';
 })
 export class FloraPageComponent {
   public floras: any[] = [];
+  searchTerm: string = '';
   public loading: boolean = true;
 
   constructor(
@@ -20,6 +21,17 @@ export class FloraPageComponent {
       this.getAllFlora();
     });
   }
+
+  filteredFloras() {
+    if (!this.searchTerm) {
+      return this.floras;
+    }
+    return this.floras.filter(flora =>
+      flora.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      flora.nameIlmiah.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
+
   getAllFlora() {
     this.flora.getAllFlora().subscribe(
       (floras: any[]) => {

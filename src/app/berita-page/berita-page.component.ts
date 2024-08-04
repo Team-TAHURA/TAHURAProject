@@ -11,6 +11,7 @@ export class BeritaPageComponent {
   public beritas: any[] = [];
   public beritasPopuler: any[] = [];
   public beritasTerkini: any[] = [];
+  searchTerm: string = '';
   currentPage = 1;
   itemsPerPage = 2; // Adjusted to 2 for each section
   public loading: boolean = true;

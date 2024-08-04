@@ -9,6 +9,7 @@ import { BeritaDetailPageComponent } from './berita-detail-page/berita-detail-pa
 import { BeritaPageComponent } from './berita-page/berita-page.component';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent}, 
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'beritaDetail-page/:id', component: BeritaDetailPageComponent},
   {path: 'detail-page', component: DetailPageComponent},
   {path: 'detail-page/:type/:id', component: DetailPageComponent },
+  { path: 'search', component: SearchComponent },
   {path: '**', component: NotFoundPageComponent }
 ];
 

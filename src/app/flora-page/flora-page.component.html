@@ -8,8 +8,14 @@
     <div class="flora">
         <div class="container flora-content">
             <h1>FLORA</h1>
+
+            <!-- Search Bar -->
+            <div class="search-bar mt-4 mb-4">
+                <input type="text" class="form-control" placeholder="Search Flora..." [(ngModel)]="searchTerm" />
+            </div>
+
             <div class="row" style="padding-bottom: 50vh;">
-                <div *ngFor="let flora of floras" class="col-md-4 col-6 mt-4">
+                <div *ngFor="let flora of filteredFloras()" class="col-md-4 col-6 mt-4">
                     <div class="card-items">
                         <img [src]="flora.photos.length > 0 ? getImageUrl(flora.photos[0]?.data) : getErrorImageUrl()"
                             class="img-fluid" alt="{{ flora.name }} Image" (error)="handleImageError($event, flora)">

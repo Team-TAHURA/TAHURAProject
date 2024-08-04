@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
     DetailPageComponent,
     HeaderComponent,
     FooterComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

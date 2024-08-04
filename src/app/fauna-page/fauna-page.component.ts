@@ -8,6 +8,7 @@
   })
   export class FaunaPageComponent {
     public faunas: any [] = [];
+    searchTerm: string = '';
     public loading: boolean = true;
 
     constructor(private fauna: FaunaService, private ngZone: NgZone) {
@@ -18,6 +19,16 @@
       this.ngZone.runOutsideAngular(() => {
         this.getAllFauna();
       })
+    }
+
+    filteredFaunas() {
+      if (!this.searchTerm) {
+        return this.faunas;
+      }
+      return this.faunas.filter(fauna =>
+        fauna.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        fauna.nameIlmiah.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
     }
 
     getAllFauna() {
