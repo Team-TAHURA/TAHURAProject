@@ -134,7 +134,7 @@
                         <a href="#" class="a-tag">Lihat Semua <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="row">
-                        <div class="col-xl-12 col-6" *ngFor="let berita of beritas.slice(2, 4)">
+                        <div class="col-xl-12 col-6 mb-3" *ngFor="let berita of beritas.slice(2, 4)">
                             <div class="card mb-1">
                                 <img [src]="berita.photos.length > 0 ? getImageUrl(berita.photos[0]?.data) : getErrorImageUrl()"
                                     class="img-fluid" alt="{{ berita.title }} Image"
