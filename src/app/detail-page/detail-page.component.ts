@@ -26,14 +26,16 @@ export class DetailPageComponent implements AfterViewInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
-    this.type = this.route.snapshot.paramMap.get('type');
-
-    if (this.type === 'flora') {
-      this.getFloraDetails();
-    } else if (this.type === 'fauna') {
-      this.getFaunaDetails();
-    }
+    this.ngZone.runOutsideAngular(() => {
+      this.id = this.route.snapshot.paramMap.get('id');
+      this.type = this.route.snapshot.paramMap.get('type');
+      
+      if (this.type === 'flora') {
+        this.getFloraDetails();
+      } else if (this.type === 'fauna') {
+        this.getFaunaDetails();
+      }
+    });
   }
 
   ngAfterViewInit(): void {

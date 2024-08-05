@@ -29,6 +29,33 @@
   
       <div class="col-md-6 text-container text-justify">
         <h2 class="pt-5">{{ flora?.name || fauna?.name }} <span style="font-style: italic;">({{ flora?.nameIlmiah || fauna?.nameIlmiah }})</span></h2>
+        <h4>KARAKTERISTIK</h4>
+        <div *ngIf="fauna">
+          <ul>
+            <li>Kategori <span style="margin-left: 50px;">:</span> {{ fauna?.category }}</li>
+            <li>Habitat <span style="margin-left: 57px;">:</span> {{ fauna?.habitat }}</li>
+            <li>Panjang <span style="margin-left: 52px;">:</span> {{ fauna?.panjang }}</li>
+            <li>Lebar <span style="margin-left: 71px;">:</span> {{ fauna?.lebar }}</li>
+            <li>Warna <span style="margin-left: 62px;">:</span> {{ fauna?.warna }}</li>
+            <li>Makanan <span style="margin-left: 43px;">:</span> {{ fauna?.makanan }}</li>
+            <li>Reproduksi <span style="margin-left: 26px;">:</span> {{ fauna?.reproduksi }}</li>
+            <li>Adaptasi <span style="margin-left: 45px;">:</span> {{ fauna?.adaptasi }}</li>
+            <li>Gerakan <span style="margin-left: 50px;">:</span> {{ fauna?.gerakan }}</li>
+            <li>Alat Gerak <span style="margin-left: 31px;">:</span> {{ fauna?.alatGerak }}</li>
+            <li>Bentuk Tubuh <span style="margin-left: 5px;">:</span> {{ fauna?.bentukTubuh }}</li>
+          </ul>
+        </div>
+        <div *ngIf="flora">
+          <ul>
+            <li>Kategori <span style="margin-left: 50px;">:</span> {{ flora?.category }}</li>
+            <li>Habitat <span style="margin-left: 57px;">:</span> {{ flora?.habitat }}</li>
+            <li>Tinggi <span style="margin-left: 52px;">:</span> {{ flora?.tinggi }}</li>
+            <li>Diameter <span style="margin-left: 71px;">:</span> {{ flora?.diameter }}</li>
+            <li>Buah <span style="margin-left: 62px;">:</span> {{ flora?.buah }}</li>
+            <li>Biji <span style="margin-left: 43px;">:</span> {{ flora?.biji }}</li>
+            <li>Daun <span style="margin-left: 26px;">:</span> {{ flora?.daun }}</li>
+          </ul>
+        </div>
         <p>{{ flora?.description || fauna?.description }}</p>
       </div>
     </div>
