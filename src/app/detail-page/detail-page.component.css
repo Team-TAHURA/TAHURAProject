@@ -6,17 +6,18 @@
     background-repeat: no-repeat;
     background-size: cover; /* Cover the entire viewport */
     background-attachment: fixed; /* Fixed background */
-    background-position: center; /* Center the background */ 
+    background-position: center; /* Center the background */
+    padding-top: 2vh;
 }
 
 .detail-page-content{
+    margin-top: 10vh;
     height: auto;
 }
 
-.detail {
-    margin: 20vh;
+/* .detail {
     background-color: white;
-}
+} */
 
 
 .button {
@@ -37,4 +38,3 @@
     background-color: #1C4231;
     color: #FBFDE7;
 }
-

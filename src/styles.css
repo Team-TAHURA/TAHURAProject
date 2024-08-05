@@ -46,7 +46,7 @@
 
 .detail-thumbs {
     width: 100%;
-    height: 15vh;
+    height: auto;
 }
 
 .detail-slide img {
@@ -58,10 +58,11 @@
 
 .detail-slide2 img{
     width: 100%;
-    height: auto;
+    height: 15vh;
     object-fit: cover;
     border-radius: 5px;
 }
+
 
 .swiper-slide-thumb-active {
     border: 2px solid #1C4231;
@@ -75,6 +76,10 @@
     background-color: rgba(255, 255, 255, 0.8); 
     padding: 5px;
     border-radius: 15%;
+}
+
+.hidden {
+    display: none;
 }
 
 body{
