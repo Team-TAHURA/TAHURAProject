@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, NgZone, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, NgZone, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FloraService } from '../services/flora.service';
 import { FaunaService } from '../services/fauna.service';
@@ -10,7 +10,7 @@ declare var Swiper: any;
   templateUrl: './detail-page.component.html',
   styleUrls: ['./detail-page.component.css']
 })
-export class DetailPageComponent implements AfterViewInit {
+export class DetailPageComponent implements OnInit, AfterViewInit {
   public flora: any;
   public fauna: any;
   public id: any;
@@ -44,7 +44,6 @@ export class DetailPageComponent implements AfterViewInit {
     });
   }
 
-  
   initSwipers() {
     if ((this.flora?.photos && this.flora.photos.length > 1) || 
         (this.fauna?.photos && this.fauna.photos.length > 1)) {
@@ -121,7 +120,7 @@ export class DetailPageComponent implements AfterViewInit {
             spaceBetween: 30,
           }
         }
-      })
+      });
     }
   }
 
@@ -130,7 +129,7 @@ export class DetailPageComponent implements AfterViewInit {
       (flora: any) => {
         this.ngZone.run(() => {
           this.flora = flora;
-          this.initSwipers();
+          this.ngZone.runOutsideAngular(() => this.initSwipers());
         });
       },
       error => {
@@ -144,7 +143,7 @@ export class DetailPageComponent implements AfterViewInit {
       (fauna: any) => {
         this.ngZone.run(() => {
           this.fauna = fauna;
-          this.initSwipers();
+          this.ngZone.runOutsideAngular(() => this.initSwipers());
         });
       },
       error => {
@@ -171,4 +170,3 @@ export class DetailPageComponent implements AfterViewInit {
     }
   }
 }
-
