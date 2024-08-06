@@ -12,7 +12,7 @@
                             <div class="row g-0">
                                 <div class="col-xl-4">
                                     <img [src]="berita.photos.length > 0 ? getImageUrl(berita.photos[0]?.data) : getErrorImageUrl()"
-                                        class="img-fluid" alt="{{ berita.title }} Image"
+                                        class="berita-image img-fluid" alt="{{ berita.title }} Image"
                                         (error)="handleImageError($event, berita)" />
                                 </div>
                                 <div class="col-xl-8 text-justify">
@@ -41,7 +41,7 @@
                     <div class="col-xl-12 col-6" *ngFor="let berita of beritasTerkini">
                         <div class="card mb-3">
                             <img [src]="berita.photos.length > 0 ? getImageUrl(berita.photos[0]?.data) : getErrorImageUrl()"
-                                class="img-fluid" alt="{{ berita.title }} Image"
+                                class="terkini-image img-fluid" alt="{{ berita.title }} Image"
                                 (error)="handleImageError($event, berita)" />
                             <div class="card-body text-justify">
                                 <h5 class="card-title berita-title">{{ berita.title }}</h5>

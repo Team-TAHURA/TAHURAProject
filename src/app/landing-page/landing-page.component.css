@@ -36,11 +36,27 @@
 }
 
 .tahuraAboutUs {
-    height: 160vh;
+    height: auto;
     background-color: #89D0EB;
     /* background-color: lightgreen; */
     position: relative;
     /* color: white; */
+}
+
+.tahuraAboutUs h4{
+    padding-top: 10vh;
+}
+
+@media screen and (max-width: 1000px) {
+    .tahuraFloraFauna{
+        height: 200vh;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .tahuraFloraFauna{
+        height: 150vh;
+    }
 }
 
 .tahuraAboutUs p {
@@ -57,6 +73,16 @@
     height: 100%;
     object-fit: cover;
     /* Ensures the image covers the entire slide area without distortion */
+}
+
+.berita-image{
+    width: auto;
+    height: 100%;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.terkini-image{
+    border-radius: 5px 5px 0px 0px;
 }
 
 /* LANDING PAGE END */

@@ -1,13 +1,15 @@
 <div #topElement></div>
-<div class="container berita-detail-content">
-    <div class="d-flex justify-content-between">
-        <h2 class="text-center">{{beritaDetails.title}}</h2>
+<div class="container berita-detail-content" style="padding-bottom: 50vh;">
+    <div class="row">
+        <h2 class="text-center berita-title">{{beritaDetails.title}}</h2>
+    </div>
+    <div class="row mt-5">
         <p class="text-end a-tag">Date {{beritaDetails.date}}</p>
     </div>
     <div class="row">
         <div class="col-xl-12">
             <img [src]="beritaDetails.photos.length > 0 ? getImageUrl(beritaDetails.photos[0]?.data) : getErrorImageUrl()"
-            class="artikel-lain" alt="{{ beritaDetails.title }} Image"
+            class="berita-detail-image" alt="{{ beritaDetails.title }} Image"
             (error)="handleImageError($event, beritaDetails)" />
         </div>
         <div class="col-xl-12 mt-5 text-justify">

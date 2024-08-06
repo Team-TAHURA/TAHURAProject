@@ -134,6 +134,17 @@ body{
     color: #1C4231;
 }
 
+.berita-image{
+    width: auto;
+    height: 100%;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.terkini-image{
+    border-radius: 5px 5px 0px 0px;
+    height: 30vh;
+}
+
 
 /* NAVBAR SECTION */
 
@@ -174,6 +185,7 @@ body{
 .title-clamp2{
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

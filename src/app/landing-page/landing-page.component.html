@@ -107,7 +107,7 @@
                                 <div class="row g-0">
                                     <div class="col-xl-4">
                                         <img [src]="berita.photos.length > 0 ? getImageUrl(berita.photos[0]?.data) : getErrorImageUrl()"
-                                            class="img-fluid" alt="{{ berita.title }} Image"
+                                            class="berita-image img-fluid" alt="{{ berita.title }} Image"
                                             (error)="handleImageError($event, beritas)" />
                                     </div>
                                     <div class="col-xl-8 text-justify">
@@ -137,7 +137,7 @@
                         <div class="col-xl-12 col-6 mb-3" *ngFor="let berita of beritas.slice(2, 4)">
                             <div class="card mb-1">
                                 <img [src]="berita.photos.length > 0 ? getImageUrl(berita.photos[0]?.data) : getErrorImageUrl()"
-                                    class="img-fluid" alt="{{ berita.title }} Image"
+                                    class="img-fluid terkini-image" alt="{{ berita.title }} Image"
                                     (error)="handleImageError($event, beritas)" />
                                 <div class="card-body text-justify">
                                     <h5 class="card-title berita-title">{{ berita.title }}</h5>
@@ -158,7 +158,7 @@
         </div>
     </div>
 
-    <div class="tahuraAboutUs">
+    <div class="tahuraAboutUs" style="padding-bottom: 50vh;">
         <h4 class="text-center mb-5 section-title">About Us</h4>
         <div class="container">
             <div class="row">
