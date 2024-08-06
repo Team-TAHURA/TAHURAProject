@@ -32,7 +32,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 200vh;
+    height: 180vh;
 }
 
 .tahuraAboutUs {
@@ -43,8 +43,14 @@
     /* color: white; */
 }
 
-.tahuraAboutUs h4{
-    padding-top: 10vh;
+.tahuraAboutUs .card{
+    padding: 2vh;
+}
+
+
+.tahuraAboutUs p{
+    font-size: 22px;
+    font-weight: 400;
 }
 
 @media screen and (max-width: 1000px) {
@@ -75,14 +81,6 @@
     /* Ensures the image covers the entire slide area without distortion */
 }
 
-.berita-image{
-    width: auto;
-    height: 100%;
-    border-radius: 5px 0px 0px 5px;
-}
 
-.terkini-image{
-    border-radius: 5px 5px 0px 0px;
-}
 
 /* LANDING PAGE END */
