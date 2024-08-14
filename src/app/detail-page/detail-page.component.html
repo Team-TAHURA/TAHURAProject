@@ -47,13 +47,17 @@
         </div>
         <div *ngIf="flora">
           <ul>
-            <li>Kategori <span style="margin-left: 50px;">:</span> {{ flora?.category }}</li>
-            <li>Habitat <span style="margin-left: 57px;">:</span> {{ flora?.habitat }}</li>
-            <li>Tinggi <span style="margin-left: 52px;">:</span> {{ flora?.tinggi }}</li>
-            <li>Diameter <span style="margin-left: 71px;">:</span> {{ flora?.diameter }}</li>
-            <li>Buah <span style="margin-left: 62px;">:</span> {{ flora?.buah }}</li>
-            <li>Biji <span style="margin-left: 43px;">:</span> {{ flora?.biji }}</li>
-            <li>Daun <span style="margin-left: 26px;">:</span> {{ flora?.daun }}</li>
+            <li>Kategori <span style="margin-left: 24px;">:</span> {{ flora?.category }}</li>
+            <li>Bentuk <span style="margin-left: 34px;">:</span> {{ flora?.bentuk }}</li>
+            <li>Akar <span style="margin-left: 53px;">:</span> {{ flora?.akar }}</li>
+            <li>Daun <span style="margin-left: 48px;">:</span> {{ flora?.daun }}</li>
+            <li>Tipe Biji <span style="margin-left: 26px;">:</span> {{ flora?.tipeBiji }}</li>
+            <li>Lainnya <span style="margin-left: 29px;">:</span> {{ flora?.lainnya }}</li>
+            <li>Kulit Kayu <span style="margin-left: 10px;">:</span> {{ flora?.kulitKayu }}</li>
+            <li>Ciri Khusus <span style="margin-left: 1px;">:</span> {{ flora?.ciriKhusus }}</li>
+            <li>Bunga <span style="margin-left: 39px;">:</span> {{ flora?.bunga }}</li>
+            <li>Buah <span style="margin-left: 49px;">:</span> {{ flora?.buah }}</li>
+            <li>Kegunaan <span style="margin-left: 10px;">:</span> {{ flora?.kegunaan }}</li>
           </ul>
         </div>
         <p>{{ flora?.description || fauna?.description }}</p>
