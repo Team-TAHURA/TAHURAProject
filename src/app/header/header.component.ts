@@ -17,4 +17,11 @@ export class HeaderComponent {
       this.router.navigate(['/search'], { queryParams: { query: this.searchTerm } });
     }
   }
+
+  closeMenu() {
+    const navbarCollapse = document.querySelector('.navbar-collapse') as HTMLElement;
+    if (navbarCollapse.classList.contains('show')) {
+      navbarCollapse.classList.remove('show');
+    }
+  }
 }

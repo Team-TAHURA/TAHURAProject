@@ -160,6 +160,11 @@ export class LandingPageComponent implements AfterViewInit {
     });
   }
 
+// with parameter for amount
+  // getAllFlora(num: number) {
+  //   this.flora.getAllFlora(num).subscribe(  
+  //     (floras: any[]) => {
+  //       this.ngZone.run(() => {
   getAllFlora() {
     this.flora.getAllFlora().subscribe(
       (floras: any[]) => {
