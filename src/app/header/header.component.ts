@@ -19,9 +19,13 @@ export class HeaderComponent {
   }
 
   closeMenu() {
+    // Tutup burger menu
     const navbarCollapse = document.querySelector('.navbar-collapse') as HTMLElement;
     if (navbarCollapse.classList.contains('show')) {
       navbarCollapse.classList.remove('show');
     }
+
+    // Scroll ke bagian atas halaman
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
