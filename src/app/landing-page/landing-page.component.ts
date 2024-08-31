@@ -10,9 +10,9 @@ declare var Swiper: any;
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements AfterViewInit {
-  public floras: any[] = [];
-  public faunas: any[] = [];
-  public beritas: any[] = [];
+  public floraspartial: any[] = [];
+  public faunaspartial: any[] = [];
+  public beritaspartial: any[] = [];
 
   constructor(
     private flora: FloraService,
@@ -23,9 +23,9 @@ export class LandingPageComponent implements AfterViewInit {
 
   ngOnInit(): void {
     this.ngZone.runOutsideAngular(() => {
-      this.getAllFlora();
-      this.getAllFauna();
-      this.getAllBerita();
+      this.getPartialFlora();
+      this.getPartialFauna();
+      this.getPartialBerita();
     });
   }
 
@@ -160,16 +160,11 @@ export class LandingPageComponent implements AfterViewInit {
     });
   }
 
-// with parameter for amount
-  // getAllFlora(num: number) {
-  //   this.flora.getAllFlora(num).subscribe(  
-  //     (floras: any[]) => {
-  //       this.ngZone.run(() => {
-  getAllFlora() {
-    this.flora.getAllFlora().subscribe(
+  getPartialFlora() {
+    this.flora.getPartialFlora().subscribe(
       (floras: any[]) => {
         this.ngZone.run(() => {
-          this.floras = floras;
+          this.floraspartial = floras;
         });
       },
       error => {
@@ -178,24 +173,24 @@ export class LandingPageComponent implements AfterViewInit {
     );
   }
 
-  getAllFauna() {
-    this.fauna.getAllFauna().subscribe(
+  getPartialFauna() {
+    this.fauna.getPartialFauna().subscribe(
       (faunas: any[]) => {
         this.ngZone.run(() => {
-          this.faunas = faunas;
+          this.faunaspartial = faunas;
         });
       },
       error => {
         console.error('Error fetching Faunas:', error);
       }
     );
-  }
+  }  
 
-  getAllBerita() {
-    this.berita.getAllBerita().subscribe(
+  getPartialBerita() {
+    this.berita.getPartialBerita().subscribe(
       (beritas: any[]) => {
         this.ngZone.run(() => {
-          this.beritas = beritas;
+          this.beritaspartial = beritas;
         });
       },
       error => {
